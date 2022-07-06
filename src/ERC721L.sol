@@ -6,6 +6,10 @@ import "../lib/openzeppelin-contracts/contracts/token/ERC721/ERC721.sol";
 contract ERC721L is ERC721 {
     event CommercialExploitation(uint256 tokenID, string uri);
 
+    constructor(string memory name_, string memory symbol_)
+        ERC721(name_, symbol_)
+    {}
+
     function getLicenseId(uint256 tokenId)
         external
         view
@@ -22,7 +26,7 @@ contract ERC721L is ERC721 {
 
     function copyrightOwner(uint256 tokenId)
         external
-        virutal
+        virtual
         returns (address)
     {}
 
